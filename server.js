@@ -1,29 +1,29 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 const app = express();
 
 // Bodyparser middleware
 app.use(
-    bodyParser.urlencoded({
-        extended: false
-    })    
+  bodyParser.urlencoded({
+    extended: false
+  })
 );
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+const db = require("./config/keys").mongoDBUrl;
 
 // Connect to MongoDB
 mongoose
-    .connect(
-        db,
-        { useNewUrlParser: true }
-)
-.then(() => console.log('MongoDB successfully connected'))
-.catch(err => console.log(err));
+  .connect(
+    db,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB successfully connected"))
+  .catch(err => console.log(err));
+  
+const port = process.env.PORT || 8080; // process.env.port is Heroku's port if you choose to deploy the app there
 
-const port = process.env.PORT || 8080; 
-
-app.listen(port, () => console.log('Server up and running on port ${port}!'));
+app.listen(port, () => console.log(`${port} is up and running with the Server!`));
