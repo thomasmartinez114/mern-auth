@@ -26,4 +26,4 @@ mongoose
   
 const port = process.env.PORT || 8080; // process.env.port is Heroku's port if you choose to deploy the app there
 
-app.listen(port, () => console.log(`${port} is up and running with the Server!`));
+app.listen(port, () => console.log(`Server is running on port ${port}`));
