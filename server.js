@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require("./config/keys").mongoDBUrl;
+const db = require("./keys").mongoDBUrl;
 // Connect to MongoDB
 mongoose
   .connect(db, { useNewUrlParser: true })
