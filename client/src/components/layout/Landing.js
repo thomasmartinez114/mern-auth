@@ -13,8 +13,7 @@ class Landing extends Component {
               scratch
             </h4>
             <p className="flow-text grey-text text-darken-1">
-              Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
+              Created a Full Stack App using User Authentication
             </p>
             <br />
             <div className="col s6">
